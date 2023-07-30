@@ -1,97 +1,133 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./css/style.css">
+    <script src="https://kit.fontawesome.com/c12878d3ba.js" crossorigin="anonymous"></script>
+    <script defer src="./script/main.js"></script>
 </head>
+
 <body>
     <header>
         <div class="inner">
             <h1>
-                <a href="#">LOGO</a>
+                <a href="index.html">
+                    LOGO
+                </a>
             </h1>
-            <div class="gnb">
-                <a href="#">조직도</a>
-                <a href="#">미디어</a>
-                <a href="#">게시판</a>
-                <a href="#">갤러리</a>
-                <a href="#">오시는 길</a>
-            </div>
-            <div class="util">
-                <ul>
-                    <li><a href="#">CONTACT</a></li>
-                    <li><a href="#">HELP</a></li>
-                    <li><a href="#">LOGIN</a></li>
-                    <li><a href="#">JOIN</a></li>
-                    <li><a href="#">SITEMAP</a></li>
+            <nav class="menuWeb">
+                <!-- 주메뉴 : global navigation bar -->
+                <ul id="gnb">
+                    <!-- li*5>a -->
+                    <li><a href="./html/department.html">조직도</a></li>
+                    <li><a href="./html/media.html">미디어</a></li>
+                    <li><a href="./html/community.html">게시판</a></li>
+                    <li><a href="./html/gallery.html">갤러리</a></li>
+                    <li><a href="./html/location.html">오시는길</a></li>
                 </ul>
-            </div>
+
+                <!-- 서브메뉴 혹은 유틸메뉴 -->
+                <ul class="util">
+                    <li><a href="#">contact</a></li>
+                    <li><a href="#">help</a></li>
+                    <li><a href="#">login</a></li>
+                    <li><a href="#">join</a></li>
+                    <li><a href="#">sitemap</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="btnCall">
+                <span>메뉴호출</span>
+            </a>
+            <nav class="menuMo">
+                <h2>
+                    <a href="#">LOGO</a>
+                    <span>DEVELPMENT INSTITUTE</span>
+                </h2>
+                <ul id="gnbMo">
+                    <li><a href="./html/department.html">조직도</a></li>
+                    <li><a href="./html/media.html">미디어</a></li>
+                    <li><a href="./html/community.html">게시판</a></li>
+                    <li><a href="./html/gallery.html">갤러리</a></li>
+                    <li><a href="./html/location.html">오시는길</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
     <figure>
-        <video src="./img/visual.mp4" autoplay loop muted></video>
+        <video src="img/visual.mp4" autoplay loop muted></video>
         <div class="inner">
             <h2>INOVATION</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id impedit tempora, officiis vel adipisci libero deserunt! Ex ullam, quod veniam atque numquam, repellat itaque libero, ipsa odio voluptatem commodi aperiam!</p>
-            <a href="#;">View Our Portfolio</a>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim nostrum fuga incidunt dicta magnam neque
+                doloremque reiciendis aliquid unde quisquam! Neque alias, debitis beatae fugit labore quos quibusdam.
+                Laborum, quod!</p>
+            <a href="#;">View our portfolio</a>
         </div>
     </figure>
     <section id="news">
         <div class="inner">
             <h1>RECENT NEWS</h1>
-            <article>
-                <img src="./img/news1.jpg" alt="">
-                <h2>
-                    <a href="#;">Here Comes Title</a>
-                </h2>
-                <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem, vitae?
-                </p>
-            </article>
-            <article>
-                <img src="./img/news2.jpg" alt="">
-                <h2>
-                    <a href="#;">Here Comes Title</a>
-                </h2>
-                <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem, vitae?
-                </p>
-            </article>
-            <article>
-                <img src="./img/news3.jpg" alt="">
-                <h2>
-                    <a href="#;">Here Comes Title</a>
-                </h2>
-                <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem, vitae?
-                </p>
-            </article>
-            <article>
-                <img src="./img/news4.jpg" alt="">
-                <h2>
-                    <a href="#;">Here Comes Title</a>
-                </h2>
-                <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem, vitae?
-                </p>
-            </article>
+            <div class="wrap">
+                <article>
+                    <div class="pic">
+                        <img src="img/news1.jpg" alt="뉴스1 이미지">
+                    </div>
+                    <h2>
+                        <a href="#;">here comes title</a>
+                    </h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                </article>
+                <article>
+                    <div class="pic">
+                        <img src="img/news2.jpg" alt="뉴스2 이미지">
+                    </div>
+                    <h2>
+                        <a href="#;">here comes title</a>
+                    </h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                </article>
+                <article>
+                    <div class="pic">
+                        <img src="img/news3.jpg" alt="뉴스3 이미지">
+                    </div>
+                    <h2>
+                        <a href="#;">here comes title</a>
+                    </h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                </article>
+                <article>
+                    <div class="pic">
+                        <img src="img/news4.jpg" alt="뉴스4 이미지">
+                    </div>
+                    <h2>
+                        <a href="#;">here comes title</a>
+                    </h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                </article>
+            </div>
         </div>
     </section>
     <section id="brand">
         <div class="inner">
-            <h1>BRAND IDENTITI</h1>
+            <h1>BRAND IDENTITY</h1>
             <div class="wrap">
                 <article>
-                    <div class="barcode"></div>
-                    <h2>BRAND IDENTITI</h2>
+                    <i class="fa-solid fa-barcode"></i>
+                    <h2>BRAND IDENTITY</h2>
                     <p>Lorem ipsum dolor sit amet.</p>
                     <a href="#;">VIEW DETAIL</a>
                 </article>
-                <img src="./img/brand1.jpg" alt="">
-                <img src="./img/brand2.jpg" alt="">
-                <img src="./img/brand3.jpg" alt="">
+                <article>
+                    <img src="img/brand1.jpg" alt="브랜드1 이미지">
+                </article>
+                <article>
+                    <img src="img/brand2.jpg" alt="브랜드2 이미지">
+                </article>
+                <article>
+                    <img src="img/brand3.jpg" alt="브랜드3 이미지">
+                </article>
             </div>
         </div>
     </section>
@@ -138,4 +174,5 @@
         </div>
     </footer>
 </body>
+
 </html>

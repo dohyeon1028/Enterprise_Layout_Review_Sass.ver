@@ -1,42 +1,44 @@
 header{
     width: 100%;
-    height: 120px;
     .inner{
         width: 1180px;
-        height: 100%;
+        height: 120px;
         margin: 0 auto;
         position: relative;
+
         h1{
             position: absolute;
-            left: 20px;
+            left: 30px;
             bottom: 20px;
             a{
                 font: bold 24px/1 "arial";
                 color: #444;
             }
         }
-        .gnb{
+        #gnb{
             position: absolute;
             bottom: 0px;
             right: 20px;
-            
-            a{
-                display: block;
+            li {
                 float: left;
-                padding: 14px 40px;
-                font: bold 14px/1 "arial";
-                color: #777;
-                &:hover{
-                    background-color: #777;
-                    color: #fff;
+                a{
+                    display: block;
+                    padding: 14px 40px;
+                    font: bold 14px/1 "arial";
+                    color: #777;
+                    &:hover{
+                        background-color: #555;
+                        color: #fff;
+                    }
                 }
             }
+            
+           
         }
         .util{
             position: absolute;
             top: 20px;
-            right: 10px;
-            ul{
+            right: 30px;
                 li{
                     float: left;
                     margin-left: 20px;
@@ -46,43 +48,146 @@ header{
                     }
                 }
             }
+        .btnCall {
+            position: absolute;
+            top: 50%;
+            right: 30px;
+            transform: translateY(-50%);
+            display: none;
+            width: 20px;
+            height: 20px;
+            &::before {
+                content: '';
+                display: block;
+                width: 100%;
+                height: 2px;
+                background-color: #000;
+                position: absolute;
+                top: 0;
+                left: 0;
+                transition: top 0.5s 0s, transform 0.5s 0.5s;
+            }
+            &::after {
+                content: '';
+                display: block;
+                width: 100%;
+                height: 2px;
+                background-color: #000;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                transition: bottom 0.5s 0s, transform 0.5s 0.5s;
+            }
+            span {
+                display: block;
+                width: 100%;
+                height: 2px;
+                background-color: #000;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                margin-top: -1px;
+                text-indent: -99999999px;
+                transition: 0.5s;
+            }
+            &.on{
+                ::before {
+                    top: 50%;
+                    margin-top: -1px;
+                    transform: rotate(45deg);
+                }
+                ::after {
+                    bottom: 50%;
+                    margin-bottom: -1px;
+                    transform: rotate(-45deg);
+                }
+                span {
+                    transform: translateX(100%);
+                    opacity: 0;
+                }
+            }
+            
+        }
+        .menuMo {
+            width: 270px;
+            height: 100vh;
+            background-color: #333;
+            position: fixed;
+            top: 0;
+        
+            left: -270px;
+            padding: 35px 30px;
+            z-index: 10;
+            text-align: center;
+            transition: 0.5s;
+            &.on {
+                left: 0;
+            }
+            h2 {
+                padding-bottom: 30px;
+                border-bottom: 1px solid #666;
+                a {
+                    display: block;
+                    font: bold 24px/1 "arial";
+                    color: #fff;
+                }
+                span {
+                    font-size: 12px;
+                    color: #aaa;
+                }
+            }
+            #gnbMo li a {
+                display: block;
+                width: 100%;
+                padding: 20px 0;
+                border-bottom: 1px solid #444;
+                font: bold 14px/1 "arial";
+                color: #888;
+            }
         }
     }
 }
 
 figure{
     width: 100%;
-    background-color: #777;
+    height: calc(100vh - 120px);
+    overflow: hidden;
+    background-color: #555;
     video{
         width: 100%;
-        height: calc(100vh - 120px);
+        height: 100%;
         object-fit: cover;
         opacity: 0.6;
     }
     .inner{
         width: 1180px;
+        margin: 0 auto;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         h2{
-            font: 120px/1 "arial";
-            margin-bottom: 20px;
+            font: normal 120px/1 "arial";
             color: #fff;
+            margin-bottom: 20px;
         }
         p{
-            font: 16px/1.3 "arial";
+            font: 16px/1.4 "arial";
             color: #888;
             margin-bottom: 80px;
         }
         a{
-            font: bold 11px/30px "arial";
-            text-align: center;
             display: block;
             width: 400px;
             height: 30px;
-            border: 1px solid #aaa;
+            border: 1px solid #bbb;
+            text-align: center;
+            font: bold 11px/30px "arial";
             color: #fff;
+            &:hover {
+                background-color: #fff;
+                color: #555;
+            }
         }
     }
 }
@@ -92,39 +197,50 @@ figure{
     padding: 200px 0;
     .inner{
         width: 1180px;
-        margin: 0px auto; 
-        &::after{
-            @include clear;
-        }
+        margin: 0 auto;
+        position: relative;
         h1{
             font: bold 24px/1 "arial";
             color: #555;
             text-align: center;
             margin-bottom: 50px;
         }
-        article{
-            width: 280px;
-            margin-right: 20px;
-            float: left;
-            &:last-child{
-                margin-right: 0px;
-            }
-            img{
-                width: 100%;
-                height: 120px;
-            }
-            h2{
-                width: 100%;
-                height: 32px;
-                margin-bottom: 10px;
-                a{
-                    font: bold 16px/1 "arial";
-                    color: #555;
+        .wrap {
+            width: 100%;
+            article {
+                width: 280px;
+                float: left;
+                margin-right: 20px;
+                &:last-child {
+                    margin-right: 0px;
+                }       
+                .pic {
+                    width: 100%;
+                    height: 120px;
+                    overflow: hidden;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        transition: all 0.5s;
+                    }
+                    &:hover{
+                        img{
+                            transform: scale(1.2);
+                        }
+                    }
                 }
-            }
-            p{
-                font: 14px/1.4 "arial";
-                color: #777;
+                h2 {
+                    margin-bottom: 10px;
+                    a {
+                        font: bold 16px/1.3 "arial";
+                        color: #555;
+                    }       
+                }
+                p {
+                    font: 14px/1.3 "arial";
+                    color: #777;
+                }
             }
         }
     }
@@ -134,69 +250,84 @@ figure{
     width: 100%;
     padding: 200px 0;
     background-color: #eee;
-    .inner{
+    .inner {
         width: 1180px;
         margin: 0 auto;
-        &::after{
-            @include clear;
-        }
-        h1{
-            font: 24px/1 "arial";
+        position: relative;
+        h1 {
+            font: bold 24px/1 "arial";
             color: #555;
             text-align: center;
             margin-bottom: 50px;
         }
-        article{
-            float: left;
-            width: 380px;
-            height: 620px;
-            margin-right: 20px;
-            margin-bottom: 20px;
-            padding: 170px 50px 0;
-            background-color: #444;
-            .barcode{
-                width: 100px;
-                height: 101px;
-                margin: 0 auto;
-                background-color: #fff;
-            }
-            h2{
-                font: bold 20px/1 "arial";
-                color: #fff;
-                text-align: center;
-                margin-top: 10px;
-            }
-            p{
-                font: 14px/1 "arial";
-                margin-bottom: 30px;
-                color: #999;
-                text-align: center;
-            }
-            a{
-                display: block;
-                width: 150px;
-                height: 30px;
-                margin: 0 auto;
-                font: 11px/30px "arial";
-                color: #ddd;
-                border: 1px solid #ddd;
-                text-align: center;
-            }
-        }
-        img{
-            object-fit: cover;
-            width: 380px;
-            height: 300px;
-            margin-right: 20px;
-            margin-bottom: 20px;
-            float: left;
-            &:nth-of-type(2){
-                margin-right: 0px;
-            }
-            &:nth-of-type(3){
-                width: 780px;
-                margin-right: 0px;
-                margin-bottom: 0px;
+        .wrap {
+            width: 100%;
+            article{
+                &:nth-of-type(1) {
+                    width: 380px;
+                    height: 620px;
+                    background-color: #444;
+                    float: left;
+                    text-align: center;
+                    padding: 170px 50px 0;
+                    margin-right: 20px;
+                    i {
+                        font-size: 100px;
+                        color: #fff;
+                        margin-bottom: 20px;
+                    }
+                    h2 {
+                        font: bold 20px/1 "arial";
+                        color: #fff;
+                        margin-bottom: 30px;
+                    }
+                    p {
+                        font: 14px/1.3 "arial";
+                        color: #999;
+                        margin-bottom: 30px;
+                    }
+                    a {
+                        display: block;
+                        width: 150px;
+                        height: 30px;
+                        font: 11px/30px "arial";
+                        color: #ddd;
+                        border: 1px solid #bbb;
+                        margin: 0 auto;
+                    }
+                }
+                &:nth-of-type(2) {
+                    width: 380px;
+                    height: 300px;
+                    float: left;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+                &:nth-of-type(3) {
+                    width: 380px;
+                    height: 300px;
+                    float: left;
+                    margin-left: 20px;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+                &:nth-of-type(4) {
+                    width: 780px;
+                    height: 300px;
+                    float: left;
+                    margin-top: 20px;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
             }
         }
     }
@@ -261,6 +392,16 @@ figure{
                     color: #555;
                     float: right;
                 }
+                &:hover {
+                    background-color: #555;
+                    a {
+                        color: #fff;
+                    }
+                    span {
+                        color: #eee;
+                    }
+                }
+                
             }
         }
     }
