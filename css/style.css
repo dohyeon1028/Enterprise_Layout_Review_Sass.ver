@@ -116,12 +116,12 @@ header .inner .btnCall span {
   text-indent: -99999999px;
   transition: 0.5s;
 }
-header .inner .btnCall.on ::before {
+header .inner .btnCall.on::before {
   top: 50%;
   margin-top: -1px;
   transform: rotate(45deg);
 }
-header .inner .btnCall.on ::after {
+header .inner .btnCall.on::after {
   bottom: 50%;
   margin-bottom: -1px;
   transform: rotate(-45deg);

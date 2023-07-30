@@ -91,12 +91,12 @@ header{
                 transition: 0.5s;
             }
             &.on{
-                ::before {
+                &::before {
                     top: 50%;
                     margin-top: -1px;
                     transform: rotate(45deg);
                 }
-                ::after {
+                &::after {
                     bottom: 50%;
                     margin-bottom: -1px;
                     transform: rotate(-45deg);
